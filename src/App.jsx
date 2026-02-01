@@ -5,7 +5,7 @@ export default function App() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/rates")
+    fetch(`${import.meta.env.VITE_API_URL}/rates`)
       .then(res => res.json())
       .then(setData)
       .catch(() => setError("Service temporarily unavailable"));
